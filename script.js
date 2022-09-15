@@ -63,28 +63,26 @@ const showNotes = () => {
 showNotes();
 
 const showMenu = (elem) => {
-  elem.parentElement.classList.add("show");
-  document.addEventListener("click", (e) => {
-    if (e.target != elem) {
-      elem.parentElement.classList.remove("show");
-    }
-  });
-};
-
-const updateNote = (id, noteTitle, noteDesc) => {
-  isUpdating = true;
-  updateId = id;
-  addBox.click();
-  addBtn.textContent = "Update Note";
-  popupTitle.textContent = "Update a Note";
-  titleInput.value = noteTitle;
-  descInput.value = noteDesc;
-};
-
-const deleteNote = (noteId) => {
-  deleteModal.classList.add("show__delete");
-  noteID = noteId;
-};
+    elem.parentElement.classList.add("show");
+    document.addEventListener("click", (e) => {
+      if (e.target != elem) {
+        elem.parentElement.classList.remove("show");
+      }
+    });
+  },
+  updateNote = (id, noteTitle, noteDesc) => {
+    isUpdating = true;
+    updateId = id;
+    addBox.click();
+    addBtn.textContent = "Update Note";
+    popupTitle.textContent = "Update a Note";
+    titleInput.value = noteTitle;
+    descInput.value = noteDesc;
+  },
+  deleteNote = (noteId) => {
+    deleteModal.classList.add("show__delete");
+    noteID = noteId;
+  };
 
 deleteBtn.addEventListener("click", () => {
   notes.splice(noteID, 1);
