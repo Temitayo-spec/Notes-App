@@ -13,8 +13,9 @@ const addBox = document.querySelector(".add__box"),
 const notes = JSON.parse(localStorage.getItem("notes")) || [];
 
 let isUpdating = false,
-  updateId,
-  noteID;
+  updateId;
+
+let noteID;
 
 const months = [
   "January",
